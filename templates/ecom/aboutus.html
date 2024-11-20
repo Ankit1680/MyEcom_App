@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Simple E-commerce</title>
+  <style media="screen">
+    /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: #fdf7f2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-image {
+    flex: 1;
+    background-color: #eee;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 40px;
+    background-color: #f4f0ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-form h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+form input, form textarea {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+form button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
+.contact-details {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.contact-details p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.share-links {
+    display: flex;
+    align-items: center;
+}
+
+.share-links span {
+    margin-right: 10px;
+}
+
+.share-links a img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.social-icons a {
+    color: #484545;
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #040404;
+}
+
+    
+  </style>
+</head>
+
+<body style="background-color:#f7f7f7;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br>
+<div class="contact-container">
+  <div class="contact-image">
+      <img src="https://www.shutterstock.com/image-photo/aesthetic-minimalist-fashion-influencer-blog-600nw-1955253880.jpg" alt="Contact Image">
+  </div>
+  <div class="contact-form">
+      <h1>Contact Us</h1>
+      <form>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name">
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+
+          <button type="submit">Contact Us</button>
+      </form>
+      <div class="contact-details">
+          <p><strong>Contact</strong><br> hers's@fashion.com</p>
+          <p><strong>Based in</strong><br> Andheri, India</p>
+      </div>
+
+      <div class="share-links">
+          <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-medium"></i></a>
+          </div>
+      </div>
+
+      
+  </div>
+</div>
+
+
+  {% include "ecom/footer.html" %}
+</body>
+<!--
+developed By : sumit kumar
+-->
+
+</html>
